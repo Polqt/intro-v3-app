@@ -1,14 +1,13 @@
-import { useState } from "react"
+import { newTodo } from '@/utils/actions'
 
 const NewTodoForm = () => {
-    const [state, updateState] = useState('')
-
     return (
-        <form action="">
-            <div>
-                <input title="input" type="text" />
-            </div>
-        </form>
+        <div>
+            <form action={newTodo}>
+                <input type="text" name="todo" className="border border-black" />
+                <button type="submit">create</button>
+            </form>
+        </div>
     )
 }
 

@@ -33,18 +33,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <header>
+        <header className="mb-20">
           <nav>
             <ul className="flex items-center">
-              {links.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href}>{link.label}</Link>
+              {links.map(({ href, label }) => (
+                <li key={href} className="px-4 text-2xl">
+                  <Link href={href}>{label}</Link>
                 </li>
               ))}
             </ul>
           </nav>
         </header>
-        <div>{children}</div>
+        {children}
       </body>
     </html>
   );
